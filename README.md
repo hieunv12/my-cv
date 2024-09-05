@@ -2,7 +2,26 @@
 Tên dự án : My CV
 Mô tả : Là dự án phát triến các thông tin cá nhân và kinh nhiệm bản thân
 Các tính năng :
-  - Tạo form CV
+  - Tạo form CV :
+    + Thông tin cá nhân : Tên , năm sinh ,số điện thoại , chức vụ , avatar , mô tả ngắn về bản thân , link facebook ,email , địa chỉ
+    + Kinh nghiệm làm việc :
+            Thời gian (bắt đầu và kết thúc -- Bắt đầu và hiện tại)
+            Tên công ty
+            Chức vụ trong công ty
+            Mô tả
+    + Học vấn :
+           Trường 
+           Chuyên nghành
+           Thời gian (bắt đầu và kết thúc -- Bắt đầu và hiện tại)
+           Điểm
+    + Kỹ năng
+    + Chứng chỉ
+    + Dự án :
+          Tên dự án
+          Thời gian (bắt đầu và kết thúc -- Bắt đầu và hiện tại)
+          Chức vụ
+          Mô tả
+
   - Preview CV
 
 
