@@ -1,3 +1,19 @@
+# Yêu cầu dự án:
+Tên dự án : My CV
+Mô tả : Là dự án phát triến các thông tin cá nhân và kinh nhiệm bản thân
+Các tính năng :
+  - Tạo form CV
+  - Preview CV
+
+
+
+
+
+
+
+
+
+# Setup project
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
