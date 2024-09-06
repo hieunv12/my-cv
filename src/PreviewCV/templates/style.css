@@ -1,0 +1,12 @@
+/* HomeCVTemplate.css */
+.custom-col {
+    background-color: #e10101;
+    padding: 20px;
+}
+
+.custom-button {
+    background-color: #1890ff;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}

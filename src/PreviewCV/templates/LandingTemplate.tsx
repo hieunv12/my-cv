@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Typography, Space } from 'antd';
 import { Link } from 'react-router-dom';
 import Button from '../atoms/Button';
-
+import './style.css';
 const { Title, Paragraph } = Typography;
 
 const LandingTemplate: React.FC = () => {
@@ -12,7 +12,8 @@ const LandingTemplate: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      style={{ padding: '2rem', textAlign: 'center' }}
+      // className='custom-col'
+      style={{ background:'red' }}
     >
       <motion.div
         initial={{ y: -50 }}

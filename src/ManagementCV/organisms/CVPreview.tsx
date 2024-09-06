@@ -9,7 +9,7 @@ interface CVPreviewProps {
 
 const CVPreview: React.FC<CVPreviewProps> = ({ name, email }) => {
   return (
-    <Card title="CV Preview" style={{ width: '100%' }}>
+    <Card  title="CV Preview" style={{ width: '100%' }}>
       <p><strong>Name:</strong> {name}</p>
       <p><strong>Email:</strong> {email}</p>
       {/* Add more fields as necessary */}
