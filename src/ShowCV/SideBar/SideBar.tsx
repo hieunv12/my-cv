@@ -31,19 +31,19 @@ const items = [
   },
 ];
 const onClick = (e: any) => {
-  // Tạo component Menu tùy chỉnh
+    // Tạo component Menu tùy chỉnh
 
-  // typescript là 1 ngôn ngữ lập trình dựa trên javascript
-  // type any là kiểu dữ liệu bất kỳ
-  // type object là kiểu dữ liệu là 1 object
-  // type function là kiểu dữ liệu là 1 function
-  // type array là kiểu dữ liệu là 1 mảng
-  // type number là kiểu dữ liệu là 1 số
-  // type string là kiểu dữ liệu là 1 chuỗi
-  // type boolean là kiểu dữ liệu là 1 boolean
-  // type null là kiểu dữ liệu là null
-  // type undefined là kiểu dữ liệu là undefined
-  // type symbol là kiểu dữ liệu là 1 symbol
+    // typescript là 1 ngôn ngữ lập trình dựa trên javascript
+    // type any là kiểu dữ liệu bất kỳ
+    // type object là kiểu dữ liệu là 1 object
+    // type function là kiểu dữ liệu là 1 function
+    // type array là kiểu dữ liệu là 1 mảng
+    // type number là kiểu dữ liệu là 1 số
+    // type string là kiểu dữ liệu là 1 chuỗi
+    // type boolean là kiểu dữ liệu là 1 boolean
+    // type null là kiểu dữ liệu là null
+    // type undefined là kiểu dữ liệu là undefined
+    // type symbol là kiểu dữ liệu là 1 symbol
   console.log(e);
 };
 const SideBar: React.FC = () => {
