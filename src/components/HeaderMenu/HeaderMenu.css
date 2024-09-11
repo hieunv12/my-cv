@@ -1,0 +1,5 @@
+/* Tùy chỉnh màu của mục được chọn */
+.ant-menu-item-selected {
+    background-color: #F0F5FF !important; /* Màu nền của mục được chọn */
+    color: black !important;              /* Màu chữ của mục được chọn */
+  }

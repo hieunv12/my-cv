@@ -13,7 +13,7 @@ import AboutPage from "./ShowCV/AboutPage/AboutPage";
 import EducationPage from "./ShowCV/EducationPage/EducationPage";
 import ExperiencePage from "./ShowCV/ExperiencePage/ExperiencePage";
 import SkillsPage from "./ShowCV/SkillsPage/SkillsPage";
-import HeaderMenu from "./components/HeaderMenu";
+import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
 const ShowUserMenuOnHome = () => {
   const location = useLocation(); // Lấy URL hiện tại
 

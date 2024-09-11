@@ -5,7 +5,7 @@ import AboutPage from '../ShowCV/AboutPage/AboutPage';
 import ExperiencePage from '../ShowCV/ExperiencePage/ExperiencePage';
 import SkillsPage from '../ShowCV/SkillsPage/SkillsPage';
 import EducationPage from '../ShowCV/EducationPage/EducationPage';
-import HeaderMenu from '../components/HeaderMenu';
+import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
 
 const RouterPreviewCV = () => {
     return (
