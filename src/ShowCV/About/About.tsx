@@ -1,125 +1,76 @@
-import React from "react";
-import {
-  UserOutlined,
-  PhoneOutlined,
-  MailOutlined,
-  HomeOutlined,
-} from "@ant-design/icons";
-import { Avatar, Typography, Col, Row } from "antd";
-import InIcon from "../../assets/InIcon";
-import Face from "../../assets/Face";
-import Tele from "../../assets/Tele";
-import GitHub from "../../assets/GitHub";
+import React, { useEffect, useState } from "react";
 
-const { Text } = Typography;
+import { Row } from "antd";
+
+import InfoUser from "./block/InfoUser";
+import AvatarSection from "./block/AvatarSection";
 
 const About: React.FC = () => {
-  return (
-    <div style={{ marginLeft: 30, marginTop: 70 }}>
-      <Row gutter={24}>
-        <Col>
-          <Avatar
-            shape="square"
-            size="large"
-            style={{ width: 250, height: 250, borderRadius: 36}}
-            icon={<UserOutlined />}
-            src="https://images2.thanhnien.vn/528068263637045248/2024/8/10/1-17232609003225266391.jpg"
-            
-          />
+  const [infoUser, setInfoUser] = useState<any>(null);
 
-          <Row
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              marginTop: 24,
-              marginRight: 30,
-            }}
-          >
-            <Col style={{ marginLeft: 30, marginTop: 16 }}>
-              <InIcon />
-            </Col>
-            <Col style={{ marginLeft: 30, marginTop: 16 }}>
-              <Tele />
-            </Col>
-            <Col style={{ marginLeft: 30, marginTop: 16 }}>
-              <GitHub />
-            </Col>
-            <Col style={{ marginLeft: 30, marginTop: 16}}>
-              <Face />
-            </Col>
-          </Row>
-         
-        </Col>
-        <Col style={{ whiteSpace: "nowrap", marginLeft: 16 }}>
-          <Text
-            style={{
-              fontSize: 48,
-              fontWeight: 700,
-              color: "#030723",
-              fontFamily: "Poppins",
-              marginBottom: 16,
-            }}
-          >
-            Nguyễn Văn Hiếu
-          </Text>
-          <Text
-            style={{
-              display: "block",
-              fontFamily: "Poppins",
-              fontSize: 16,
-              fontWeight: "bold",
-              marginBottom: 16,
-             
-            }}
-          >
-            REACTJS DEVELOPER
-          </Text>
-          <Text
-            style={{
-              display: "block",
-              fontFamily: "Poppins",
-              fontSize: 16,
-              fontWeight: 400,
-              marginBottom: 16
-            }}
-          >
-            <PhoneOutlined style={{ marginRight: 8 }} />
-            +846213871244
-          </Text>
-          <Text
-            style={{
-              display: "block",
-              fontFamily: "Poppins",
-              fontSize: 16,
-              fontWeight: 400,
-              marginBottom: 16
-            }}
-          >
-            <MailOutlined style={{ marginRight: 8 }} />
-            abc@gmail.com
-          </Text>
-          <Text
-            style={{
-              display: "block",
-              fontFamily: "Poppins",
-              fontSize: 16,
-              fontWeight: 400,
-              marginBottom: 16
-            }}
-          >
-            <HomeOutlined style={{ marginRight: 8 }} />
-            Quận A, Hà Nội
-          </Text>
-        </Col>
+  // cách chuyền dữ liệu từ component sang component khác bằng cách chuyền props
+  useEffect(() => {
+    // call api responseUser
+    // useEffect : là một hook trong React, nó được sử dụng để
+    // thực hiện một số hành động sau khi một component được render
+    // useEffect về học
+    callApi();
+  }, []);
+  const callApi = () => {
+    // call api responseUser
+    const responseUser = {
+      name: "Nguyễn Văn Hiếu",
+      position: "ReactJS Developer",
+      description:
+        "02 năm kinh nghiệm đào tạo kỹ năng bán hàng và kỹ năng mềm tại trường đại học và doanh nghiệp. Kinh nghiệm đứng lớp 50 - 500 học viên. Có thế mạnh về thiết kế chương trình, đào tạo trực tuyến và xây dựng chuẩn đầu ra. Đang tìm kiếm cơ hội làm việc tại vị trí [X] để đóng góp gia tăng chất lượng chương trình đào tạo cho công ty [Y].",
+      avatar:
+        "https://images2.thanhnien.vn/528068263637045248/2024/8/10/1-17232609003225266391.jpg",
+      link_in: "https://www.linkedin.com/in/nguyenvanhieu/",
+      link_telegram: "https://t.me/nguyenvanhieu",
+      link_github: "https://github.com/nguyenvanhieu",
+      link_facebook: "https://www.facebook.com/nguyenvanhieu",
+      address: "1234 Main St, Anytown, USA",
+      phone: "1234567890",
+      email: "nguyenvanhieu@example.com",
+      skills: [
+        { name: "ReactJS", level: "Expert" },
+        { name: "JavaScript", level: "Advanced" },
+        { name: "HTML", level: "Intermediate" },
+        { name: "CSS", level: "Intermediate" },
+        { name: "Node.js", level: "Intermediate" },
+        { name: "Express", level: "Intermediate" },
+        { name: "MongoDB", level: "Intermediate" },
+        { name: "MongoDB", level: "Intermediate" },
+      ],
+    };
+    setInfoUser(responseUser);
+  };
+  return (
+    <div  >
+      <Row gutter={24}>
+        {/* công dụng chia nhỏ các component là 
+        
+          -Dễ nhìn (code sạch) Dễ quản lý
+          -Dễ tái sử dụng
+          - Dễ thay đổi
+          - Hạn chế việc render lại các component khác khi chỉ cần render lại 1 component
+        */}
+        <AvatarSection
+          // truyền dữ liệu từ component sang component khác bằng cách chuyền props
+          // và avatar, name, position, description là các props của component AvatarSection
+          // ? là optional chaining nghĩa là nếu infoUser không có avatar, name, position, description thì sẽ không bị lỗi
+          avatar={infoUser?.avatar}
+          link_in={infoUser?.link_in}
+          link_telegram={infoUser?.link_telegram}
+          link_github={infoUser?.link_github}
+          link_facebook={infoUser?.link_facebook}
+        />
+
+        <InfoUser />
       </Row>
-      <p style={{marginTop: 30, fontWeight: 300, fontSize: 12, }}>
-            02 năm kinh nghiệm đào tạo kỹ năng bán hàng và kỹ năng mềm tại
-            trường đại học và doanh nghiệp. Kinh nghiệm đứng lớp 50 - 500 học
-            viên. Có thế mạnh về thiết kế chương trình, đào tạo trực tuyến và
-            xây dựng chuẩn đầu ra. Đang tìm kiếm cơ hội làm việc tại vị trí [X]
-            để đóng góp gia tăng chất lượng chương trình đào tạo cho công ty
-            [Y].
-          </p>
+      <p style={{ marginTop: 30, fontWeight: 300, fontSize: 12 }}>
+        {infoUser?.description}
+      </p>
     </div>
   );
 };
