@@ -115,7 +115,7 @@ const HeaderMenu = ({ children }: any) => {
           selectedKeys={getSelectedKeys()}
           inlineCollapsed={collapsed}
           mode="inline"
-          style={{ fontSize: 16, fontWeight: "bold" }}
+          style={{ fontSize: 16, fontWeight: "bold", padding: 16 }}
         >
           <Menu.Item key="about" icon={<UserOutlined />}>
             <Link to="user/about" style={{ marginLeft: 18 }}>
@@ -141,7 +141,7 @@ const HeaderMenu = ({ children }: any) => {
       </Sider>
 
 {/* chứa các page con : About, Experience, Skills, Education */}
-      <Layout style={{paddingLeft:32,paddingRight:32,paddingTop:50}}>
+      <Layout style={{paddingLeft:32,paddingRight:32,paddingTop:50, background: "white"}}>
         <Content >{children}</Content>
       </Layout>
     </Layout>
