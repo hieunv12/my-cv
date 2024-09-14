@@ -1,11 +1,10 @@
-import React from "react";
 import {
-  UserOutlined,
-  PhoneOutlined,
-  MailOutlined,
   HomeOutlined,
+  MailOutlined,
+  PhoneOutlined
 } from "@ant-design/icons";
 import { Col, Typography } from "antd";
+import React from "react";
 const { Text } = Typography;
 const InfoUser: React.FC = () => {
   return (
@@ -20,6 +19,7 @@ const InfoUser: React.FC = () => {
             }}
           >
             Nguyễn Văn Hiếu
+            {/* cái điền giá trị trực tiếp  người ta gọi là fix cứng */}
           </Text>
           <Text
             style={{

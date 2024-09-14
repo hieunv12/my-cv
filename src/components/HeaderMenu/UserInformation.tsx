@@ -11,6 +11,7 @@ const { Text } = Typography;
 
 interface UserInformationProps {
     collapsed: boolean;
+    // nếu mà có dấu ? thì có hay ko ko cần thiết 
     toggleCollapsed: () => void
 }
 const UserInformation:  React.FC<UserInformationProps> = (props) => {
