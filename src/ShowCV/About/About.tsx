@@ -66,7 +66,14 @@ const About: React.FC = () => {
           link_facebook={infoUser?.link_facebook}
         />
 
-        <InfoUser />
+      <InfoUser
+        name="Nguyễn Văn Hiếu"
+        role="REACTJS DEVELOPER"
+        phone="+846213871244"
+        email="abc@gmail.com"
+        address="Quận A, Hà Nội"
+      /> 
+        
       </Row>
       <p style={{ marginTop: 30, fontWeight: 300, fontSize: 12 }}>
         {infoUser?.description}

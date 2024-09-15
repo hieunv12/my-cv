@@ -1,8 +1,12 @@
-import React from "react";
+import React from 'react';
+import SkillsComponent from './SkillsComponnent';
 
 const Skills: React.FC = () => {
-    return(
-        <div>Skills</div>
-    )
-}
-export default Skills ;
+    return (
+        <div>
+            <SkillsComponent />
+        </div>
+    );
+};
+
+export default Skills;
