@@ -1,89 +1,106 @@
-import React from 'react';
-import { Row, Col, Typography, List, Avatar } from 'antd';
-import ExperienceCard from './ExperienceCard';
+import React from "react";
+import { Row, Col, Typography, List, Avatar } from "antd";
+import ExperienceCard from "./ExperienceCard";
+import ItemExperience from "./block/ItemExperience";
 
 const { Title } = Typography;
-
+export interface ItemExperience {
+  title: string;
+  company: string;
+  date: string;
+  location: string;
+  description: string;
+}
 const ExperienceList = () => {
-  const experiences = [
+  const experiences :ItemExperience[]= [
     {
-      title: 'Senior UI/UX Product Designer',
-      company: 'Apple',
-      date: 'Aug 2018 - Present · 1 year',
-      location: 'Paris',
+      title: "Senior UI/UX Product Designer",
+      company: "Apple",
+      date: "Aug 2018 - Present · 1 year",
+      location: "Paris",
       description:
-        'Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.',
+        "Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.",
     },
     {
-        title: 'Senior UI/UX Product Designer',
-        company: 'Apple',
-        date: 'Aug 2018 - Present · 1 year',
-        location: 'Paris',
-        description:
-          'Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.',
-      },
-      {
-        title: 'Senior UI/UX Product Designer',
-        company: 'Apple',
-        date: 'Aug 2018 - Present · 1 year',
-        location: 'Paris',
-        description:
-          'Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.',
-      },
-      {
-        title: 'Senior UI/UX Product Designer',
-        company: 'Apple',
-        date: 'Aug 2018 - Present · 1 year',
-        location: 'Paris',
-        description:
-          'Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.',
-      },
-      {
-        title: 'Senior UI/UX Product Designer',
-        company: 'Apple',
-        date: 'Aug 2018 - Present · 1 year',
-        location: 'Paris',
-        description:
-          'Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.',
-      },
-      {
-        title: 'Senior UI/UX Product Designer',
-        company: 'Apple',
-        date: 'Aug 2018 - Present · 1 year',
-        location: 'Paris',
-        description:
-          'Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.',
-      },
-      {
-        title: 'Senior UI/UX Product Designer',
-        company: 'Apple',
-        date: 'Aug 2018 - Present · 1 year',
-        location: 'Paris',
-        description:
-          'Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.',
-      },
-      {
-        title: 'Senior UI/UX Product Designer',
-        company: 'Apple',
-        date: 'Aug 2018 - Present · 1 year',
-        location: 'Paris',
-        description:
-          'Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.',
-      },
-      {
-        title: 'Senior UI/UX Product Designer',
-        company: 'Apple',
-        date: 'Aug 2018 - Present · 1 year',
-        location: 'Paris',
-        description:
-          'Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.',
-      },
-
+      title: "Senior UI/UX Product Designer",
+      company: "Apple",
+      date: "Aug 2018 - Present · 1 year",
+      location: "Paris",
+      description:
+        "Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.",
+    },
+    {
+      title: "Senior UI/UX Product Designer",
+      company: "Apple",
+      date: "Aug 2018 - Present · 1 year",
+      location: "Paris",
+      description:
+        "Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.",
+    },
+    {
+      title: "Senior UI/UX Product Designer",
+      company: "Apple",
+      date: "Aug 2018 - Present · 1 year",
+      location: "Paris",
+      description:
+        "Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.",
+    },
+    {
+      title: "Senior UI/UX Product Designer",
+      company: "Apple",
+      date: "Aug 2018 - Present · 1 year",
+      location: "Paris",
+      description:
+        "Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.",
+    },
+    {
+      title: "Senior UI/UX Product Designer",
+      company: "Apple",
+      date: "Aug 2018 - Present · 1 year",
+      location: "Paris",
+      description:
+        "Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.",
+    },
+    {
+      title: "Senior UI/UX Product Designer",
+      company: "Apple",
+      date: "Aug 2018 - Present · 1 year",
+      location: "Paris",
+      description:
+        "Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.",
+    },
+    {
+      title: "Senior UI/UX Product Designer",
+      company: "Apple",
+      date: "Aug 2018 - Present · 1 year",
+      location: "Paris",
+      description:
+        "Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.",
+    },
+    {
+      title: "Senior UI/UX Product Designer",
+      company: "Apple",
+      date: "Aug 2018 - Present · 1 year",
+      location: "Paris",
+      description:
+        "Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.",
+    },
   ];
+  // khởi tạo arrow function
+  const renderItem = (item: ItemExperience, index: number) => {
+    // gọi function component vào trong arrow function
+    return <ItemExperience item={item} index={index} />;
+  };
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+        }}
+      >
         <Title style={{ fontSize: 48, fontWeight: 700 }}>Experience</Title>
       </div>
       {/* <Row gutter={[24, 24]}>
@@ -99,25 +116,16 @@ const ExperienceList = () => {
           </Col>
         ))}
       </Row> */}
-        <List
+      <List
         dataSource={experiences}
         pagination={{
-          pageSize: 3, // Change to the number of items per page you want
+          pageSize: 5, // Change to the number of items per page you want
         }}
-        renderItem={(item, index) => (
-          <List.Item>
-            <List.Item.Meta
-                    avatar={
-                      <Avatar src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${index}`} />
-                    }
-              title={<a href="https://ant.design">{item.title}</a>}
-              description={`
-                ${item.company} · ${item.date} · ${item.location}
-                ${item.description}
-              `}
-            />
-          </List.Item>
-        )}
+        // renderItem  cần viết riêng ra :
+        // b1 khởi tạo arrow function
+        // b2 Khởi tạo function component
+        // b3 gọi function component vào trong arrow function
+        renderItem={renderItem}
       />
     </div>
   );

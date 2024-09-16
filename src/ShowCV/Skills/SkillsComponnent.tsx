@@ -25,7 +25,7 @@ interface SkillLevelProps {
     skills: SkillDetail[];
     type: string; 
 }
-
+// khai bao ra function component
 const SkillLevel: React.FC<SkillLevelProps> = ({
     title,
     description,
@@ -84,9 +84,9 @@ const SkillLevel: React.FC<SkillLevelProps> = ({
             >
                 {skills.length > 0 ? (
                     skills.map((skill, index) => (
-                        <div key={index}>
-                            <h3>{skill.title}</h3>
-
+                        <div key={index} style={{height:expanded?200:50}}>
+                            {/* <h3>{skill.title}</h3> */}
+                            <p>{skill.title}</p>
                             {expanded && (
                                 <ul>
                                     {skill.details.map((detail, detailIndex) => (
@@ -94,7 +94,9 @@ const SkillLevel: React.FC<SkillLevelProps> = ({
                                     ))}
                                 </ul>
                             )}
-                            {!expanded ? <DownOutlined /> : <UpOutlined />}
+                          <div>
+                              {!expanded ? <DownOutlined /> : <UpOutlined />}
+                            </div>
                         </div>
                     ))
                 ) : (
@@ -113,6 +115,22 @@ const skillsData = [
         skills: [
             {
                 title: 'Reactjs',
+                details: [
+                    'Phân chia các component',
+                    'Sử dụng các hook cơ bản: useState, useEffect, ...',
+                    'Call các API',
+                ],
+            },
+            {
+                title: 'HTML',
+                details: [
+                    'Phân chia các component',
+                    'Sử dụng các hook cơ bản: useState, useEffect, ...',
+                    'Call các API',
+                ],
+            },
+            {
+                title: 'HTML',
                 details: [
                     'Phân chia các component',
                     'Sử dụng các hook cơ bản: useState, useEffect, ...',
