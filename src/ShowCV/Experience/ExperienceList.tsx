@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Typography } from 'antd';
+import { Row, Col, Typography, List, Avatar } from 'antd';
 import ExperienceCard from './ExperienceCard';
 
 const { Title } = Typography;
@@ -86,7 +86,7 @@ const ExperienceList = () => {
       <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
         <Title style={{ fontSize: 48, fontWeight: 700 }}>Experience</Title>
       </div>
-      <Row gutter={[24, 24]}>
+      {/* <Row gutter={[24, 24]}>
         {experiences.map((exp, index) => (
           <Col key={index} xs={24} sm={12} md={8}>
             <ExperienceCard
@@ -98,7 +98,27 @@ const ExperienceList = () => {
             />
           </Col>
         ))}
-      </Row>
+      </Row> */}
+        <List
+        dataSource={experiences}
+        pagination={{
+          pageSize: 3, // Change to the number of items per page you want
+        }}
+        renderItem={(item, index) => (
+          <List.Item>
+            <List.Item.Meta
+                    avatar={
+                      <Avatar src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${index}`} />
+                    }
+              title={<a href="https://ant.design">{item.title}</a>}
+              description={`
+                ${item.company} · ${item.date} · ${item.location}
+                ${item.description}
+              `}
+            />
+          </List.Item>
+        )}
+      />
     </div>
   );
 };

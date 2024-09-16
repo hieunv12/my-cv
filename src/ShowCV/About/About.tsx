@@ -67,11 +67,11 @@ const About: React.FC = () => {
         />
 
       <InfoUser
-        name="Nguyễn Văn Hiếu"
-        role="REACTJS DEVELOPER"
-        phone="+846213871244"
-        email="abc@gmail.com"
-        address="Quận A, Hà Nội"
+        name={infoUser?.name}
+        role={infoUser?.role}
+        phone={infoUser?.phone}
+        email={infoUser?.email}
+        address={infoUser?.address}
       /> 
         
       </Row>

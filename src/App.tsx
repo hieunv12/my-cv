@@ -12,7 +12,7 @@ import HomeCVTemplate from "./ShowCV/HomeCVTemplate";
 import About from "./ShowCV/About/About";
 import Experience from "./ShowCV/Experience/Experience";
 import Skills from "./ShowCV/Skills/Skills";
-import Education from "./ShowCV/Education/Education";
+import Project from "./ShowCV/Project/Project";
 import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
 const ShowUserMenuOnHome = () => {
   const location = useLocation(); // Lấy URL hiện tại
@@ -25,7 +25,7 @@ const ShowUserMenuOnHome = () => {
         <Route path="/user/about" element={<About />} />
         <Route path="/user/experience" element={<Experience />} />
         <Route path="/user/skills" element={<Skills />} />
-        <Route path="/user/education" element={<Education />} />
+        <Route path="/user/project" element={<Project />} />
       </Routes>
     </HeaderMenu>
   ) : null;

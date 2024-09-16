@@ -3,8 +3,10 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { UserOutlined, CalendarOutlined } from "@ant-design/icons"; // import relevant icons
 import SkillIcon from "../../assets/SkillIcon";
-import Education from "../../assets/EducationIcon";
+import Education from "../../assets/ProjectIcon";
 import style from "antd/es/affix/style";
+import Project from "../../ShowCV/Project/Project";
+import ProjectIcon from "../../assets/ProjectIcon";
 
 interface MenuHeaderProps {
   collapsed: boolean;
@@ -42,8 +44,8 @@ const MenuHeader: React.FC<MenuHeaderProps> = ({ collapsed }) => {
     if (pathname.startsWith("/user/skills")) {
       return ["skills"];
     }
-    if (pathname.startsWith("/user/education")) {
-      return ["education"];
+    if (pathname.startsWith("/user/project")) {
+      return ["project"];
     }
     return [];
   };
@@ -77,12 +79,12 @@ const MenuHeader: React.FC<MenuHeaderProps> = ({ collapsed }) => {
     },
     {
       label: (
-        <Link to="/user/education" style={{ marginLeft: 23 }}>
-          Education
+        <Link to="/user/project" style={{ marginLeft: 23 }}>
+          Project
         </Link>
       ),
-      key: "education",
-      icon: <Education />,
+      key: "project",
+      icon: <ProjectIcon />,
     },
   ];
 
