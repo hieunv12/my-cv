@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Typography, List, Avatar } from "antd";
 import ExperienceCard from "./ExperienceCard";
 import ItemExperience from "./block/ItemExperience";
@@ -12,7 +12,7 @@ export interface ItemExperience {
   description: string;
 }
 const ExperienceList = () => {
-  const experiences :ItemExperience[]= [
+  const [experiences, setExperiences] = useState<ItemExperience[]>([
     {
       title: "Senior UI/UX Product Designer",
       company: "Apple",
@@ -85,7 +85,17 @@ const ExperienceList = () => {
       description:
         "Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.",
     },
-  ];
+    {
+      title: "Senior UI/UX Product Designer",
+      company: "Apple",
+      date: "Aug 2018 - Present · 1 year",
+      location: "Paris",
+      description:
+        "Directly collaborated with CEO and Product team to prototype, design and deliver the UI and UX experience with a lean design process: research, design, test, and iterate.",
+    },
+
+  ]);
+
   // khởi tạo arrow function
   const renderItem = (item: ItemExperience, index: number) => {
     // gọi function component vào trong arrow function

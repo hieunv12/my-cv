@@ -4,13 +4,13 @@ import { DownOutlined, UpOutlined } from '@ant-design/icons';
 const TypeBackGround = (type: string) => {
     switch (type) {
         case 'Beginner':
-            return '#A8D5BA'; 
+            return '#A8D5BA';
         case 'Intermediate':
             return '#5DADE2';
         case 'Excellent':
             return '#1ABC9C';
         default:
-            return '#E5F7EB'; 
+            return '#E5F7EB';
     }
 };
 
@@ -23,19 +23,19 @@ interface SkillLevelProps {
     title: string;
     description: string;
     skills: SkillDetail[];
-    type: string; 
+    type: string;
 }
-// khai bao ra function component
+
 const SkillLevel: React.FC<SkillLevelProps> = ({
     title,
     description,
     skills,
-    type
+    type,
 }) => {
-    const [expanded, setExpanded] = useState(false);
+    const [expandedSkillIndex, setExpandedSkillIndex] = useState<number | null>(null);
 
-    const toggleExpand = () => {
-        setExpanded(!expanded);
+    const toggleExpand = (index: number) => {
+        setExpandedSkillIndex(expandedSkillIndex === index ? null : index);
     };
 
     return (
@@ -47,14 +47,11 @@ const SkillLevel: React.FC<SkillLevelProps> = ({
                 backgroundColor: TypeBackGround(type),
                 width: '100%',
                 maxWidth: '300px',
-                minHeight: 500,
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
             }}
         >
             <h2
                 style={{
-                    borderRadius: '12px 12px 0 0',
-                    margin: '0',
                     textAlign: 'center',
                     color: '#2C3E50',
                 }}
@@ -63,7 +60,6 @@ const SkillLevel: React.FC<SkillLevelProps> = ({
             </h2>
             <p
                 style={{
-                    borderRadius: '0 0 12px 12px',
                     textAlign: 'center',
                     color: '#2C3E509E',
                 }}
@@ -71,32 +67,42 @@ const SkillLevel: React.FC<SkillLevelProps> = ({
                 {description}
             </p>
 
-            <div
-                style={{
-                    backgroundColor: '#fff',
-                    borderRadius: '12px',
-                    // marginTop: '10px',
-                    cursor: 'pointer',
-                    border: '0px solid #ccc',
-                    padding: 4
-                }}
-                onClick={toggleExpand}
-            >
+            <div style={{ backgroundColor: '#fff', borderRadius: '12px' }}>
                 {skills.length > 0 ? (
                     skills.map((skill, index) => (
-                        <div key={index} style={{height:expanded?200:50}}>
-                            {/* <h3>{skill.title}</h3> */}
-                            <p>{skill.title}</p>
-                            {expanded && (
-                                <ul>
+                        <div
+                            key={index}
+                            style={{
+                                padding: '10px',
+                                cursor: 'pointer',
+                                borderBottom: '1px solid #eee',
+                            }}
+                        >
+                            <div
+                                onClick={() => toggleExpand(index)}
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between'
+                                   
+                                }}
+                            >
+                                <p style={{ margin: 0 }}>{skill.title}</p>
+                                <div>
+                                    {expandedSkillIndex === index ? (
+                                        <UpOutlined style={{ fontSize: '16px' }} />
+                                    ) : (
+                                        <DownOutlined style={{ fontSize: '16px' }} />
+                                    )}
+                                </div>
+                            </div>
+                            {expandedSkillIndex === index && (
+                                <ul style={{ paddingLeft: '20px' }}>
                                     {skill.details.map((detail, detailIndex) => (
                                         <li key={detailIndex}>{detail}</li>
                                     ))}
                                 </ul>
                             )}
-                          <div>
-                              {!expanded ? <DownOutlined /> : <UpOutlined />}
-                            </div>
                         </div>
                     ))
                 ) : (
@@ -123,19 +129,7 @@ const skillsData = [
             },
             {
                 title: 'HTML',
-                details: [
-                    'Phân chia các component',
-                    'Sử dụng các hook cơ bản: useState, useEffect, ...',
-                    'Call các API',
-                ],
-            },
-            {
-                title: 'HTML',
-                details: [
-                    'Phân chia các component',
-                    'Sử dụng các hook cơ bản: useState, useEffect, ...',
-                    'Call các API',
-                ],
+                details: ['Cơ bản về HTML', 'Thực hành các thẻ HTML phổ biến', 'Tối ưu SEO'],
             },
         ],
     },
@@ -173,20 +167,8 @@ const skillsData = [
 
 const SkillsComponent: React.FC = () => {
     return (
-        <div
-            style={{
-                padding: '10px',
-                fontFamily: 'Arial, sans-serif',
-            }}
-        >
-            <h1
-                style={{
-                    fontSize: '48px',
-                    marginBottom: '40px',
-                }}
-            >
-                Skills
-            </h1>
+        <div style={{ padding: '10px', fontFamily: 'Arial, sans-serif' }}>
+            <h1 style={{ fontSize: '48px', marginBottom: '40px' }}>Skills</h1>
             <div
                 style={{
                     display: 'flex',
@@ -201,7 +183,7 @@ const SkillsComponent: React.FC = () => {
                         title={level.level}
                         description={level.description}
                         skills={level.skills}
-                        type={level.type} // Pass the type to dynamically set background color
+                        type={level.type}
                     />
                 ))}
             </div>
