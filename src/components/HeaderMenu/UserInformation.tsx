@@ -1,5 +1,5 @@
 import { Avatar, Button, Col, Typography } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import {
 
     LeftOutlined,
@@ -8,15 +8,25 @@ import {
 
 
 const { Text } = Typography;
-
+export const ButtonSendData=({data}:{data:string})=>{
+const text="nguyen van duy"
+  return(
+    <Button onClick={()=>{}}>send data</Button>
+  )
+}
 interface UserInformationProps {
     collapsed: boolean;
     // nếu mà có dấu ? thì có hay ko ko cần thiết 
     toggleCollapsed: () => void
+    // call back
+    onSendData:(data:string)=>void
 }
 const UserInformation:  React.FC<UserInformationProps> = (props) => {
-    const {collapsed, toggleCollapsed} = props;
+    const {collapsed, toggleCollapsed,onSendData} = props;
+// màn hình con
+//  có cách nào chuyền từ con sang cha
 
+    const [data,setData]=useState('nguyen van hieu')
     return(
         <div
         style={{
@@ -51,6 +61,7 @@ const UserInformation:  React.FC<UserInformationProps> = (props) => {
           )}
         </div>
 
+<ButtonSendData data={data}/>
         <Button
           // type="primary"
           onClick={toggleCollapsed}
@@ -73,3 +84,5 @@ const UserInformation:  React.FC<UserInformationProps> = (props) => {
 }
 
 export default UserInformation
+
+

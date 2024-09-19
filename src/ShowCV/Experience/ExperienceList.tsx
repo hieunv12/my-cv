@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { Row, Col, Typography, List, Avatar } from "antd";
-import ExperienceCard from "./ExperienceCard";
+import { List, Typography } from "antd";
+import { useState } from "react";
 import ItemExperience from "./block/ItemExperience";
 
 const { Title } = Typography;
@@ -113,23 +112,10 @@ const ExperienceList = () => {
       >
         <Title style={{ fontSize: 48, fontWeight: 700 }}>Experience</Title>
       </div>
-      {/* <Row gutter={[24, 24]}>
-        {experiences.map((exp, index) => (
-          <Col key={index} xs={24} sm={12} md={8}>
-            <ExperienceCard
-              title={exp.title}
-              company={exp.company}
-              date={exp.date}
-              location={exp.location}
-              description={exp.description}
-            />
-          </Col>
-        ))}
-      </Row> */}
       <List
         dataSource={experiences}
         pagination={{
-          pageSize: 5, // Change to the number of items per page you want
+          pageSize: 8, // Change to the number of items per page you want
         }}
         // renderItem  cần viết riêng ra :
         // b1 khởi tạo arrow function

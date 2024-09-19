@@ -71,6 +71,7 @@ const SkillLevel: React.FC<SkillLevelProps> = ({
                 {skills.length > 0 ? (
                     skills.map((skill, index) => (
                         <div
+                        onClick={() => toggleExpand(index)}
                             key={index}
                             style={{
                                 padding: '10px',
@@ -79,7 +80,7 @@ const SkillLevel: React.FC<SkillLevelProps> = ({
                             }}
                         >
                             <div
-                                onClick={() => toggleExpand(index)}
+                               
                                 style={{
                                     display: 'flex',
                                     alignItems: 'center',
@@ -88,13 +89,7 @@ const SkillLevel: React.FC<SkillLevelProps> = ({
                                 }}
                             >
                                 <p style={{ margin: 0 }}>{skill.title}</p>
-                                <div>
-                                    {expandedSkillIndex === index ? (
-                                        <UpOutlined style={{ fontSize: '16px' }} />
-                                    ) : (
-                                        <DownOutlined style={{ fontSize: '16px' }} />
-                                    )}
-                                </div>
+                              
                             </div>
                             {expandedSkillIndex === index && (
                                 <ul style={{ paddingLeft: '20px' }}>
@@ -103,6 +98,13 @@ const SkillLevel: React.FC<SkillLevelProps> = ({
                                     ))}
                                 </ul>
                             )}
+                              <div style={{display:'flex',justifyContent:'center' }}>
+                                    {expandedSkillIndex === index ? (
+                                        <UpOutlined style={{ fontSize: '16px' }} />
+                                    ) : (
+                                        <DownOutlined style={{ fontSize: '16px' }} />
+                                    )}
+                                </div>
                         </div>
                     ))
                 ) : (

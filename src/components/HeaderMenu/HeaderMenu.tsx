@@ -11,6 +11,7 @@ const { Text } = Typography;
 const HeaderMenu = ({ children }: any) => {
   const [collapsed, setCollapsed] = useState(false);
 
+  
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
@@ -32,9 +33,14 @@ const HeaderMenu = ({ children }: any) => {
             lấy giá trị Props từ màn hình cha
             Truyền props từ màn hình cha sang màn hình con
         */}
+        {/* màn hình cha */}
         <UserInformation
           collapsed={collapsed}
           toggleCollapsed={toggleCollapsed}
+          onSendData={(data)=>{
+            console.log({data});
+            
+          }}
         />
 
         <div style={{ borderBottom: "2px solid #E8E8E8", margin: "16px 0" }} />
@@ -58,3 +64,4 @@ const HeaderMenu = ({ children }: any) => {
 };
 
 export default HeaderMenu;
+// screen 1 => props 1 => props 2 
